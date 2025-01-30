@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class PostController extends Controller
 {
@@ -20,7 +22,26 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        // create post with slug
+        // $post_title = "This is just testing";
+        // $post_slug =Str::slug($post_title,"-");
+        // // echo $post_slug;
+        // Post::create ([
+        //     'title'=>$post_title,
+        //     'slug'=>$post_slug,
+        //     'description'=> "lorem ipsum dolor sit amet consetetur",
+        //     'user_id'=>1,
+        // ]);
+
+        // create slug by ovserver
+        $post_title = "This is another testing";
+        $post_slug =Str::slug($post_title,"-");
+        // echo $post_slug;
+        Post::create ([
+            'title'=>$post_title,
+            'description'=> "lorem ipsum dolor sit amet consetetur",
+            'user_id'=>2,
+        ]);
     }
 
     /**

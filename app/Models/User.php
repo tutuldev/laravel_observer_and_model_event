@@ -11,16 +11,17 @@ class User extends Model
     public function post(){
         return $this->hasMany(Post::class);
     }
-    protected static function booted():void{
-        static::deleted(function ($user){
-            $user->post()->delete();
-        });
+    // needed when use by model only other wise used it observer file 
+    // protected static function booted():void{
+    //     static::deleted(function ($user){
+    //         $user->post()->delete();
+    //     });
 
-        static::created(function ($user){
-            //when created new then send email
-        });
-        static::updated(function ($user){
-            //when updated new then send email
-        });
-    }
+    //     static::created(function ($user){
+    //         //when created new then send email
+    //     });
+    //     static::updated(function ($user){
+    //         //when updated new then send email
+    //     });
+    // }
 }

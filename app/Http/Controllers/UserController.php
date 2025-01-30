@@ -28,7 +28,11 @@ class UserController extends Controller
         // Post::where('user_id',1)->delete();
 
         // now delete by user model is good
-        $user = User::find(2)->delete();
+        // $user = User::find(2)->delete();
+
+        // delete with observer
+        $user = User::find(3)->delete();
+
     }
 
     /**
