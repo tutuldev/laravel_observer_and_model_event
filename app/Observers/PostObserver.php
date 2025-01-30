@@ -11,6 +11,10 @@ class PostObserver
     /**
      * Handle the Post "created" event.
      */
+    public function retrieved(Post $post): void
+    {
+        $post->increment('counter');
+    }
     public function created(Post $post): void
     {
         //

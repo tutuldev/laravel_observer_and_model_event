@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $post = Post::find(2);
+        return $post;
     }
 
     /**
