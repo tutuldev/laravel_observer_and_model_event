@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::with('post')->find(1);
+        $user = User::with('post')->find(2);
         return $user;
     }
 
@@ -23,9 +23,12 @@ class UserController extends Controller
     public function create()
     {
         // when delete user then also delete user all post
+        // delete with controller but is not good way
+        // $user = User::find(1)->delete();
+        // Post::where('user_id',1)->delete();
 
-        $user = User::find(1)->delete();
-        Post::where('user_id',1)->delete();
+        // now delete by user model is good
+        $user = User::find(2)->delete();
     }
 
     /**
